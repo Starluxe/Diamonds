@@ -20,7 +20,7 @@ shinyServer(function(input, output) {
         # build linear regression model
         fit <- lm( price~carat, diam)
         # predicts the price 
-        pred <- predict(fit, newdata = data.frame(carat = input$car,
+        pred <- predict(fit, newdata = data.frame(carat = input$carat,
                                                   cut = input$cut,
                                                   color = input$col,
                                                   clarity = input$clar))
@@ -28,7 +28,7 @@ shinyServer(function(input, output) {
         plot <- ggplot(data=diam, aes(x=carat, y = price))+
             geom_point(aes(color = cut), alpha = 0.3)+
             geom_smooth(method = "lm")+
-            geom_vline(xintercept = input$car, color = "red")+
+            geom_vline(xintercept = input$carat, color = "red")+
             geom_hline(yintercept = pred, color = "green")
         plot
     })
@@ -36,7 +36,7 @@ shinyServer(function(input, output) {
         # renders the text for the prediction below the graph
         diam <- filter(diamonds, grepl(input$cut, cut), grepl(input$col, color), grepl(input$clar, clarity))
         fit <- lm( price~carat, diam)
-        pred <- predict(fit, newdata = data.frame(carat = input$car,
+        pred <- predict(fit, newdata = data.frame(carat = input$carat,
                                                   cut = input$cut,
                                                   color = input$col,
                                                   clarity = input$clar))

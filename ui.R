@@ -20,7 +20,8 @@ shinyUI(fluidPage(
         sidebarPanel(
             helpText("This application predicts the price of a diamond based on its characteristics."),
             h3(helpText("Select:")),
-            numericInput("car", label = h4("Carats"), step = 0.01, value = 2),
+            sliderInput("carat", label = h4("Carats"), value = 2, step = 0.01, min = 0, max = 5),
+            #numericInput("car", label = h4("Carats"), step = 0.01, value = 2),
             selectInput("cut", label = h4("Cut"), 
                         choices = list("Unknown" = "*", "Fair" = "Fair", "Good" = "^Good",
                                        "Very Good" = "Very Good", "Premium" = "Premium",

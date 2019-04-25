@@ -3,13 +3,14 @@ Diamond price prediction
 author: Luciano Guerra 
 date: 04/25/19
 autosize: true
-transition: rotate
+transition: fade
 transition-speed: slow
 
 Overview
 ========================================================
 
-This presentation contains documentation for the Diamond price prediction application. The application can be found [**here**] (http://rpubs.com/Starluxe/Diamond)
+This presentation contains documentation for the Diamond price prediction application. The application can 
+be found [**here**](http://rpubs.com/Starluxe/Diamond)
 
 This application it is building linear regression model using `diamonds` data set and is predicting the price of a diamond depending of its properties.The application allows the user to select:
 - Carat
